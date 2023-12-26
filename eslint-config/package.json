@@ -1,0 +1,48 @@
+{
+    "name": "@walrus/eslint-config",
+    "private": true,
+    "version": "0.0.1",
+    "type": "module",
+    "description": "walrus eslint-config",
+    "main": "index.js",
+    "exports": {
+        ".": "./index.js"
+    },
+    "author": "Andrey Pakhomov",
+    "scripts": {
+        "start": "vite",
+        "build": "tsc && vite build --base=./",
+        "preview": "vite preview",
+        "ts:check": "tsc --noEmit",
+        "eslint:check": "eslint --max-warnings 0 --ext .jsx,.js,.ts,.tsx src/",
+        "eslint:fix": "eslint --fix --ext .jsx,.js,.ts,.tsx src/",
+        "stylelint:check": "stylelint \"src/**/*.scss\"",
+        "stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
+        "lint:check": "yarn eslint:check && yarn stylelint:check && yarn ts:check",
+        "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
+        "test": "TZ=Europe/Moscow vitest run --isolate=false --threads=false"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "6.15.0",
+        "@typescript-eslint/parser": "6.15.0",
+        "eslint": "8.56.0",
+        "eslint-config-airbnb": "19.0.4",
+        "eslint-config-airbnb-typescript": "17.1.0",
+        "eslint-config-airbnb-typescript-prettier": "5.0.0",
+        "eslint-config-prettier": "9.1.0",
+        "eslint-config-react-app": "7.0.1",
+        "eslint-import-resolver-alias": "1.1.2",
+        "eslint-import-resolver-typescript": "3.6.1",
+        "eslint-plugin-filenames": "1.3.2",
+        "eslint-plugin-import": "2.29.1",
+        "eslint-plugin-jsx-a11y": "6.8.0",
+        "eslint-plugin-prettier": "5.1.1",
+        "eslint-plugin-react": "7.33.2",
+        "eslint-plugin-react-hooks": "4.6.0",
+        "eslint-plugin-simple-import-sort": "10.0.0",
+        "eslint-plugin-sort-keys-fix": "1.1.2",
+        "eslint-plugin-typescript-sort-keys": "3.1.0",
+        "prettier": "3.1.1",
+        "typescript": "5.3.3"
+    }
+}

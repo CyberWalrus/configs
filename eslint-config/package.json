@@ -13,6 +13,9 @@
         "url": "https://github.com/CyberWalrus/configs.git"
     },
     "homepage": "https://github.com/CyberWalrus/configs#readme",
+    "publishConfig": {
+        "access": "public"
+    },
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "6.16.0",
         "@typescript-eslint/parser": "6.16.0",

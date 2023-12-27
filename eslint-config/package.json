@@ -1,5 +1,5 @@
 {
-    "name": "@walrus/eslint-config",
+    "name": "@cyber-walrus/eslint-config",
     "version": "0.0.1",
     "type": "module",
     "description": "walrus eslint-config",
@@ -33,7 +33,7 @@
         "eslint-plugin-simple-import-sort": "10.0.0",
         "eslint-plugin-sort-keys-fix": "1.1.2",
         "eslint-plugin-typescript-sort-keys": "3.1.0",
-        "prettier": "*",
+        "prettier": "3.1.1",
         "typescript": "5.3.3"
     }
 }

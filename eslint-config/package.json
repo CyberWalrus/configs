@@ -2,7 +2,7 @@
     "name": "@cyber-walrus/eslint-config",
     "version": "0.0.3",
     "type": "module",
-    "description": "walrus eslint-config",
+    "description": "cyber-walrus eslint-config",
     "main": "index.cjs",
     "exports": {
         ".": "./index.cjs"

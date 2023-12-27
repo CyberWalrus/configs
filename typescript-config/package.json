@@ -1,6 +1,6 @@
 {
     "name": "@cyber-walrus/typescript-config",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "module",
     "description": "cyber-walrus typescript-config",
     "author": "Andrey Pakhomov <stonewalrusfan@gmail.com>",
@@ -13,7 +13,8 @@
         "access": "public"
     },
     "files": [
-        "package.json"
+        "package.json",
+        "tsconfig.json"
     ],
     "dependencies": {
         "typescript": "5.3.3",

@@ -1,0 +1,23 @@
+{
+    "name": "@cyber-walrus/configs",
+    "version": "0.0.5",
+    "type": "module",
+    "description": "cyber-walrus configs",
+    "author": "Andrey Pakhomov <stonewalrusfan@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CyberWalrus/configs.git"
+    },
+    "homepage": "https://github.com/CyberWalrus/configs#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "package.json"
+    ],
+    "dependencies": {
+        "@cyber-walrus/eslint-config": "0.0.3",
+        "@cyber-walrus/stylelint-config": "0.0.1",
+        "@cyber-walrus/typescript-config": "0.0.1"
+    }
+}

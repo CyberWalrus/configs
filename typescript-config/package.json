@@ -1,0 +1,22 @@
+{
+    "name": "@cyber-walrus/typescript-config",
+    "version": "0.0.1",
+    "type": "module",
+    "description": "cyber-walrus typescript-config",
+    "author": "Andrey Pakhomov <stonewalrusfan@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CyberWalrus/configs.git"
+    },
+    "homepage": "https://github.com/CyberWalrus/configs#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "package.json"
+    ],
+    "dependencies": {
+        "typescript": "5.3.3",
+        "typescript-plugin-css-modules": "5.0.2"
+    }
+}

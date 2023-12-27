@@ -8,19 +8,6 @@
         ".": "./index.js"
     },
     "author": "Andrey Pakhomov",
-    "scripts": {
-        "start": "vite",
-        "build": "tsc && vite build --base=./",
-        "preview": "vite preview",
-        "ts:check": "tsc --noEmit",
-        "eslint:check": "eslint --max-warnings 0 --ext .jsx,.js,.ts,.tsx src/",
-        "eslint:fix": "eslint --fix --ext .jsx,.js,.ts,.tsx src/",
-        "stylelint:check": "stylelint \"src/**/*.scss\"",
-        "stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
-        "lint:check": "yarn eslint:check && yarn stylelint:check && yarn ts:check",
-        "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
-        "test": "TZ=Europe/Moscow vitest run --isolate=false --threads=false"
-    },
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "6.15.0",
         "@typescript-eslint/parser": "6.15.0",

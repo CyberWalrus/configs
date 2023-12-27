@@ -19,16 +19,6 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
-        "outDir": "lib/src",
-        "typeRoots": [
-            "./types"
-        ],
-        "baseUrl": "./",
-        "paths": {
-            "$*": [
-                "src/*"
-            ]
-        },
         "plugins": [
             {
                 "name": "typescript-plugin-css-modules",

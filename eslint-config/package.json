@@ -1,6 +1,6 @@
 {
     "name": "@cyber-walrus/eslint-config",
-    "version": "0.0.3",
+    "version": "1.0.0",
     "type": "module",
     "description": "cyber-walrus eslint-config",
     "main": "index.cjs",

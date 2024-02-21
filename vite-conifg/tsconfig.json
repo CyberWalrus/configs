@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "typeRoots": [
+            "./types"
+        ],
+        "outDir": "./build/cjs",
+        "module": "commonjs"
+    }
+}

@@ -194,7 +194,7 @@ module.exports = {
             {
                 groups: [
                     ['^react', '^@?\\w'],
-                    ['^\\$+'],
+                    ['^\\$app+', '^\\$pages+', '^\\$widgets+', '^\\$entities+', '^\\$shared+', '^\\$+'],
                     ['^\\.\\.(?!/?$)', '^\\.\\./?$', '^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
                     ['^\\$styles.+\\.(c|le|sa|sc|pc)ss$', '^.+\\.(c|le|sa|sc|pc)ss$'],
                 ],
@@ -204,6 +204,143 @@ module.exports = {
         'sort-keys-fix/sort-keys-fix': [1, 'asc', { caseSensitive: true, natural: true }],
         'typescript-sort-keys/interface': [1, 'asc', { caseSensitive: true, natural: true, requiredFirst: true }],
         'typescript-sort-keys/string-enum': [1, 'asc', { caseSensitive: true, natural: true }],
+        'import/no-restricted-paths': [
+            'error',
+            {
+                zones: [
+                    // pages
+                    {
+                        from: 'src/app',
+                        target: 'src/pages',
+                    },
+                    {
+                        from: 'src/processes',
+                        target: 'src/pages',
+                    },
+                    // Cross import
+                    {
+                        from: 'src/pages/*/index.ts',
+                        target: 'src/pages/*/**/*',
+                    },
+
+                    // widgets
+                    {
+                        from: 'src/app',
+                        target: 'src/widgets',
+                    },
+                    {
+                        from: 'src/processes',
+                        target: 'src/widgets',
+                    },
+                    {
+                        from: 'src/pages',
+                        target: 'src/widgets',
+                    },
+                    // Cross import
+                    {
+                        from: 'src/widgets/*/index.ts',
+                        target: 'src/widgets/*/**/*',
+                    },
+
+                    // features
+                    {
+                        from: 'src/app',
+                        target: 'src/features',
+                    },
+                    {
+                        from: 'src/processes',
+                        target: 'src/features',
+                    },
+                    {
+                        from: 'src/pages',
+                        target: 'src/features',
+                    },
+                    {
+                        from: 'src/widgets',
+                        target: 'src/features',
+                    },
+                    // Cross import
+                    {
+                        from: 'src/features/*/index.ts',
+                        target: 'src/features/*/**/*',
+                    },
+
+                    // entities
+                    {
+                        from: 'src/app',
+                        target: 'src/entities',
+                    },
+                    {
+                        from: 'src/processes',
+                        target: 'src/entities',
+                    },
+                    {
+                        from: 'src/pages',
+                        target: 'src/entities',
+                    },
+                    {
+                        from: 'src/widgets',
+                        target: 'src/entities',
+                    },
+                    {
+                        from: 'src/features',
+                        target: 'src/entities',
+                    },
+                    // Cross import
+                    {
+                        from: 'src/entities/*/index.ts',
+                        target: 'src/entities/*/**/*',
+                    },
+
+                    // shared
+                    {
+                        from: 'src/app',
+                        target: 'src/shared',
+                    },
+                    {
+                        from: 'src/processes',
+                        target: 'src/shared',
+                    },
+                    {
+                        from: 'src/pages',
+                        target: 'src/shared',
+                    },
+                    {
+                        from: 'src/widgets',
+                        target: 'src/shared',
+                    },
+                    {
+                        from: 'src/features',
+                        target: 'src/shared',
+                    },
+                    {
+                        from: 'src/entities',
+                        target: 'src/shared',
+                    },
+                ],
+            },
+        ],
+        'no-restricted-imports': [
+            'error',
+            {
+                patterns: [
+                    // Use public API only
+                    '$app/**',
+                    '$pages/*/**',
+                    '$widgets/*/**',
+                    '$features/*/**',
+                    '$entities/*/**',
+                    '$shared/*/*/**',
+
+                    '../**/app',
+                    '../**/pages',
+                    '../**/widgets',
+                    '../**/features',
+                    '../**/entities',
+                    '../**/shared',
+                ],
+            },
+        ],
     },
     settings: {
         'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },

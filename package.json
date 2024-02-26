@@ -1,6 +1,6 @@
 {
     "name": "@cyber-walrus/configs",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "type": "module",
     "description": "cyber-walrus configs",
     "author": "Andrey Pakhomov <stonewalrusfan@gmail.com>",
@@ -17,7 +17,7 @@
     ],
     "dependencies": {
         "@cyber-walrus/eslint-config": "1.1.1",
-        "@cyber-walrus/stylelint-config": "1.1.1",
-        "@cyber-walrus/typescript-config": "1.1.1"
+        "@cyber-walrus/stylelint-config": "1.1.2",
+        "@cyber-walrus/typescript-config": "1.1.2"
     }
 }

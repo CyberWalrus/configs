@@ -13,6 +13,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'airbnb-typescript-prettier',
+        'plugin:@tanstack/eslint-plugin-query/recommended'
     ],
     globals: {
         mount: true,

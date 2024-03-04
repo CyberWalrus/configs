@@ -67,6 +67,21 @@ module.exports = {
                 'sort-keys-fix/sort-keys-fix': 0,
             },
         },
+        {
+            files: [
+                '**/*.tsx?',
+                '**/*.jsx?',
+                '!src/**',
+                'src/**/__tests__/**',
+                'src/**/__e2e__/**',
+                'src/**/__mocks__/**',
+            ],
+            rules: {
+                '@typescript-eslint/unbound-method': 0,
+                'import/no-extraneous-dependencies': 0,
+                'no-restricted-imports': 0,
+            },
+        },
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: { project: './tsconfig.json' },
@@ -80,6 +95,7 @@ module.exports = {
         'prettier',
         'typescript-sort-keys',
         'sort-keys-fix',
+        'node',
     ],
     root: true,
     rules: {
@@ -142,6 +158,16 @@ module.exports = {
         'no-restricted-syntax': 0,
         'no-underscore-dangle': 1,
         'no-unused-vars': 1,
+        'node/file-extension-in-import': [
+            2,
+            'always',
+            {
+                '.js': 'never',
+                '.jsx': 'never',
+                '.ts': 'never',
+                '.tsx': 'never',
+            },
+        ],
         'padding-line-between-statements': [
             2,
             {
@@ -205,6 +231,7 @@ module.exports = {
         'sort-keys-fix/sort-keys-fix': [1, 'asc', { caseSensitive: true, natural: true }],
         'typescript-sort-keys/interface': [1, 'asc', { caseSensitive: true, natural: true, requiredFirst: true }],
         'typescript-sort-keys/string-enum': [1, 'asc', { caseSensitive: true, natural: true }],
+        'no-await-in-loop': 0,
         'import/no-restricted-paths': [
             'error',
             {

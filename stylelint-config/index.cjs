@@ -34,7 +34,14 @@ module.exports = {
         ],
         'comment-no-empty': true,
         'comment-whitespace-inside': 'always',
-        'csstree/validator': { syntaxExtensions: ['sass', 'less'] },
+        'csstree/validator': {
+            ignoreAtrules: ['container'],
+            properties: {
+                'container-name': '<any-value>',
+                'container-type': '| normal | size | inline-size | inherit | initial | revert | revert-layer | unset',
+            },
+            syntaxExtensions: ['sass', 'less'],
+        },
         'custom-property-empty-line-before': [
             'always',
             {

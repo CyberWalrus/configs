@@ -49,7 +49,7 @@ module.exports = {
                 ignore: ['first-nested'],
             },
         ],
-        'custom-property-pattern': '^([a-z][a-zA-Z]*)((-|__|_)[a-zA-Z0-9]+)*$',
+        'custom-property-pattern': '^([a-z][a-z]*)((-|__|_)[a-z0-9]+)*$',
         'declaration-block-no-duplicate-properties': [
             true,
             { ignoreProperties: ['/background\\-/'] },
@@ -151,7 +151,7 @@ module.exports = {
         ],
         'selector-attribute-quotes': 'always',
         'selector-class-pattern': [
-            '^.[a-z\\d-]+(?:__[a-z\\d-]+)?(?:_[a-z\\d-]+)?$',
+            '^.[a-zA-Z\\d-]+(?:__[a-zA-Z\\d-]+)?(?:_[a-zA-Z\\d-]+)?$',
             { resolveNestedSelectors: true },
         ],
         'selector-id-pattern': '^[a-z]+(?:[a-z\\d-]+)?$',

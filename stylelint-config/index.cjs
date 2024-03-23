@@ -49,7 +49,7 @@ module.exports = {
                 ignore: ['first-nested'],
             },
         ],
-        'custom-property-pattern': '^([a-z][a-z]*)((-|__|_)[a-z0-9]+)*$',
+        'custom-property-pattern': '^([a-z][a-zA-Z]*)((-|__|_)[a-zA-Z0-9]+)*$',
         'declaration-block-no-duplicate-properties': [
             true,
             { ignoreProperties: ['/background\\-/'] },

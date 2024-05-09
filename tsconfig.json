@@ -1,0 +1,12 @@
+{
+    "references": [
+        {
+            "path": "./example"
+        }
+    ],
+    "files": [],
+    "include": [],
+    "exclude": [
+        "**/node_modules"
+    ]
+}

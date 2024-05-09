@@ -9,6 +9,8 @@
         "url": "git+https://github.com/CyberWalrus/configs.git"
     },
     "scripts": {
+        "start": "yarn workspace example dev",
+        "build": "yarn workspace example build",
         "update": "node update-versions.js",
         "send": "yarn workspaces run send"
     },
@@ -16,6 +18,7 @@
     "workspaces": [
         "configs",
         "eslint-config",
+        "example",
         "stylelint-config",
         "typescript-config"
     ],

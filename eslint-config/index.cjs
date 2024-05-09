@@ -80,6 +80,9 @@ module.exports = {
                 '@typescript-eslint/unbound-method': 0,
                 'import/no-extraneous-dependencies': 0,
                 'no-restricted-imports': 0,
+                'no-console': 0,
+                'prefer-promise-reject-errors': 0,
+                'no-await-in-loop': 0,
             },
         },
     ],
@@ -100,7 +103,7 @@ module.exports = {
     root: true,
     rules: {
         '@typescript-eslint/array-type': [1, { default: 'array-simple', readonly: 'array-simple' }],
-        '@typescript-eslint/consistent-type-definitions': [1, 'type'],
+        '@typescript-eslint/consistent-type-definitions': [2, 'type'],
         '@typescript-eslint/consistent-type-imports': 1,
         '@typescript-eslint/naming-convention': 0,
         '@typescript-eslint/no-throw-literal': 0,
@@ -115,6 +118,12 @@ module.exports = {
             },
         ],
         '@typescript-eslint/no-var-requires': 2,
+        '@typescript-eslint/consistent-type-imports': [
+            'error',
+            {
+                fixStyle: 'separate-type-imports',
+            },
+        ],
 
         'arrow-body-style': [2, 'as-needed'],
         'class-methods-use-this': 1,

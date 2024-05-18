@@ -19,7 +19,7 @@ declare module '*.svg' {
 
     import type { SystemIconProps } from '$basics';
 
-    const SVG: FC<SystemIconProps>;
+    const SVG: string;
     export default SVG;
 }
 

@@ -181,6 +181,13 @@ module.exports = {
         'no-param-reassign': 0,
         'no-plusplus': 0,
         'no-restricted-globals': 0,
+        'no-restricted-properties': [
+            2,
+            {
+                message: 'Please use square brackets to access array element with index.',
+                property: 'at',
+            },
+        ],
         'no-restricted-syntax': 0,
         'no-underscore-dangle': 1,
         'no-unused-vars': 1,

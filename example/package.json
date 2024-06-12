@@ -1,7 +1,7 @@
 {
   "name": "example",
   "private": true,
-  "version": "1.4.1",
+  "version": "1.6.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,7 +15,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@cyber-walrus/eslint-config": "*",
+    "@cyber-walrus/eslint-plugin": "*",
     "@cyber-walrus/stylelint-config": "*",
     "@cyber-walrus/typescript-config": "*",
     "@types/react": "18.2.66",

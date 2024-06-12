@@ -17,7 +17,7 @@
     "homepage": "https://github.com/CyberWalrus/configs#readme",
     "workspaces": [
         "configs",
-        "eslint-config",
+        "eslint-plugin",
         "example",
         "stylelint-config",
         "typescript-config"

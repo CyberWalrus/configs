@@ -1,140 +1,180 @@
+
 module.exports = {
+    extends: [],
+    plugins: ['react-refresh', 'boundaries'],
     rules: {
-        'import/no-restricted-paths': [
-            'error',
+        'boundaries/element-types': [
+            2,
             {
-                zones: [
-                    // pages
+                default: 'allow',
+                message: '${file.type} is not allowed to import (${dependency.type})',
+                rules: [
                     {
-                        from: 'src/app',
-                        target: 'src/pages',
+                        disallow: ['app', 'pages', 'widgets', 'features', 'entities'],
+                        from: ['shared'],
+                        message: 'Shared module must not import upper layers (${dependency.type})',
                     },
                     {
-                        from: 'src/processes',
-                        target: 'src/pages',
-                    },
-                    // Cross import
-                    {
-                        from: 'src/pages/*/index.ts',
-                        target: 'src/pages/*/**/*',
-                    },
-
-                    // widgets
-                    {
-                        from: 'src/app',
-                        target: 'src/widgets',
+                        disallow: ['app', 'pages', 'widgets', 'features'],
+                        from: ['entities'],
+                        message: 'Entity must not import upper layers (${dependency.type})',
                     },
                     {
-                        from: 'src/processes',
-                        target: 'src/widgets',
+                        disallow: [
+                            [
+                                'entities',
+                                {
+                                    entity: '!${entity}',
+                                },
+                            ],
+                        ],
+                        from: ['entities'],
+                        message: 'Entity must not import other entity',
                     },
                     {
-                        from: 'src/pages',
-                        target: 'src/widgets',
-                    },
-                    // Cross import
-                    {
-                        from: 'src/widgets/*/index.ts',
-                        target: 'src/widgets/*/**/*',
-                    },
-
-                    // features
-                    {
-                        from: 'src/app',
-                        target: 'src/features',
+                        disallow: ['app', 'pages', 'widgets'],
+                        from: ['features'],
+                        message: 'Feature must not import upper layers (${dependency.type})',
                     },
                     {
-                        from: 'src/processes',
-                        target: 'src/features',
+                        disallow: [
+                            [
+                                'features',
+                                {
+                                    feature: '!${feature}',
+                                },
+                            ],
+                        ],
+                        from: ['features'],
+                        message: 'Feature must not import other feature',
                     },
                     {
-                        from: 'src/pages',
-                        target: 'src/features',
+                        disallow: ['app', 'pages'],
+                        from: ['widgets'],
+                        message: 'Feature must not import upper layers (${dependency.type})',
                     },
                     {
-                        from: 'src/widgets',
-                        target: 'src/features',
-                    },
-                    // Cross import
-                    {
-                        from: 'src/features/*/index.ts',
-                        target: 'src/features/*/**/*',
-                    },
-
-                    // entities
-                    {
-                        from: 'src/app',
-                        target: 'src/entities',
+                        disallow: [
+                            [
+                                'widgets',
+                                {
+                                    widget: '!${widget}',
+                                },
+                            ],
+                        ],
+                        from: ['widgets'],
+                        message: 'Widget must not import other widget',
                     },
                     {
-                        from: 'src/processes',
-                        target: 'src/entities',
+                        disallow: ['app'],
+                        from: ['pages'],
+                        message: 'Page must not import upper layers (${dependency.type})',
                     },
                     {
-                        from: 'src/pages',
-                        target: 'src/entities',
-                    },
-                    {
-                        from: 'src/widgets',
-                        target: 'src/entities',
-                    },
-                    {
-                        from: 'src/features',
-                        target: 'src/entities',
-                    },
-                    // Cross import
-                    {
-                        from: 'src/entities/*/index.ts',
-                        target: 'src/entities/*/**/*',
-                    },
-
-                    // shared
-                    {
-                        from: 'src/app',
-                        target: 'src/shared',
-                    },
-                    {
-                        from: 'src/processes',
-                        target: 'src/shared',
-                    },
-                    {
-                        from: 'src/pages',
-                        target: 'src/shared',
-                    },
-                    {
-                        from: 'src/widgets',
-                        target: 'src/shared',
-                    },
-                    {
-                        from: 'src/features',
-                        target: 'src/shared',
-                    },
-                    {
-                        from: 'src/entities',
-                        target: 'src/shared',
+                        disallow: [
+                            [
+                                'pages',
+                                {
+                                    page: '!${page}',
+                                },
+                            ],
+                        ],
+                        from: ['pages'],
+                        message: 'Page must not import other page',
                     },
                 ],
             },
         ],
-        'no-restricted-imports': [
-            'error',
+        'boundaries/entry-point': [
+            2,
             {
-                patterns: [
-                    '$app/**',
-                    '$pages/*/**',
-                    '$widgets/*/**',
-                    '$features/*/**',
-                    '$entities/*/**',
-                    '$shared/*/*/**',
-
-                    '../**/app',
-                    '../**/pages',
-                    '../**/widgets',
-                    '../**/features',
-                    '../**/entities',
-                    '../**/shared',
+                default: 'disallow',
+                rules: [
+                    {
+                        allow: '**/*/index.ts',
+                        target: [
+                            [
+                                'shared',
+                                {
+                                    segment: 'lib',
+                                },
+                            ],
+                        ],
+                    },
+                    {
+                        allow: '**/*.(ts|tsx)',
+                        target: [
+                            [
+                                'shared',
+                                {
+                                    segment: 'lib',
+                                },
+                            ],
+                        ],
+                    },
+                    {
+                        allow: 'index.ts',
+                        target: [
+                            [
+                                'shared',
+                                {
+                                    segment: 'constants',
+                                },
+                            ],
+                        ],
+                    },
+                    {
+                        allow: '**',
+                        target: [
+                            [
+                                'shared',
+                                {
+                                    segment: 'ui', // ("ui"|"constants")
+                                },
+                            ],
+                        ],
+                    },
+                    {
+                        allow: 'index.(ts|tsx)',
+                        target: ['app', 'pages', 'widgets', 'features', 'entities'],
+                    },
                 ],
             },
         ],
-    }
-}
+        'react-refresh/only-export-components': 0,
+    },
+    settings: {
+        'boundaries/elements': [
+            {
+                pattern: 'app',
+                type: 'app',
+            },
+            {
+                capture: ['page'],
+                pattern: 'pages/*',
+                type: 'pages',
+            },
+            {
+                capture: ['widget'],
+                pattern: 'widgets/*',
+                type: 'widgets',
+            },
+            {
+                capture: ['feature'],
+                pattern: 'features/*',
+                type: 'features',
+            },
+            {
+                capture: ['entity'],
+                pattern: 'entities/*',
+                type: 'entities',
+            },
+            {
+                capture: ['segment'],
+                pattern: 'shared/*',
+                type: 'shared',
+            },
+        ],
+        'boundaries/include': ['src/**/*'],
+    },
+};

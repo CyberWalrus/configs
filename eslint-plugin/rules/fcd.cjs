@@ -91,7 +91,18 @@ module.exports = {
                 default: 'disallow',
                 rules: [
                     {
-                        allow: '**/*/index.ts',
+                        allow: '*/index.(ts|tsx)',
+                        target: [
+                            [
+                                'shared',
+                                {
+                                    segment: 'core',
+                                },
+                            ],
+                        ],
+                    },
+                    {
+                        allow: '(*/*|*)/index.(ts|tsx)',
                         target: [
                             [
                                 'shared',
@@ -102,29 +113,29 @@ module.exports = {
                         ],
                     },
                     {
-                        allow: '**/*.(ts|tsx)',
+                        allow: '(*/*|*)/index.(ts|tsx)',
                         target: [
                             [
                                 'shared',
                                 {
-                                    segment: 'lib',
+                                    segment: 'api',
                                 },
                             ],
                         ],
                     },
                     {
-                        allow: 'index.ts',
+                        allow: '(*/*|*)/index.(ts|tsx)',
                         target: [
                             [
                                 'shared',
                                 {
-                                    segment: 'constants',
+                                    segment: 'model',
                                 },
                             ],
                         ],
                     },
                     {
-                        allow: '**',
+                        allow: '(*/*|*)/index.(ts|tsx)',
                         target: [
                             [
                                 'shared',
@@ -136,7 +147,11 @@ module.exports = {
                     },
                     {
                         allow: 'index.(ts|tsx)',
-                        target: ['app', 'pages', 'widgets', 'features', 'entities'],
+                        target: ['app'],
+                    },
+                    {
+                        allow: '(*/*|*)/index.(ts|tsx)',
+                        target: ['pages', 'widgets', 'features', 'entities'],
                     },
                 ],
             },

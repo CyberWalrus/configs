@@ -1,7 +1,8 @@
 
 module.exports = {
     extends: [],
-    plugins: ['react-refresh', 'boundaries']rules: {
+    plugins: ['react-refresh', 'boundaries'],
+    rules: {
         'boundaries/element-types': [
             2,
             {

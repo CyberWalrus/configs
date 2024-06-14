@@ -1,8 +1,7 @@
 
 module.exports = {
     extends: [],
-    plugins: ['react-refresh', 'boundaries'],
-    rules: {
+    plugins: ['react-refresh', 'boundaries']rules: {
         'boundaries/element-types': [
             2,
             {
@@ -91,6 +90,17 @@ module.exports = {
                 default: 'disallow',
                 rules: [
                     {
+                        allow: '**',
+                        target: [
+                            [
+                                'shared',
+                                {
+                                    segment: 'assets',
+                                },
+                            ],
+                        ],
+                    },
+                    {
                         allow: '*/index.(ts|tsx)',
                         target: [
                             [
@@ -150,7 +160,7 @@ module.exports = {
                         target: ['app'],
                     },
                     {
-                        allow: '(*/*|*)/index.(ts|tsx)',
+                        allow: '(*/|)index.(ts|tsx)',
                         target: ['pages', 'widgets', 'features', 'entities'],
                     },
                 ],

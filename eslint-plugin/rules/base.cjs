@@ -161,8 +161,10 @@ module.exports = {
             'error',
             {
                 fixStyle: 'separate-type-imports',
+                prefer: 'type-imports',
             },
         ],
+        '@typescript-eslint/no-import-type-side-effects': 'off',
         '@typescript-eslint/default-param-last': ['error'],
         '@typescript-eslint/dot-notation': [
             'error',
@@ -682,7 +684,7 @@ module.exports = {
         'import/no-useless-path-segments': [
             'error',
             {
-                commonjs: true,
+                noUselessIndex: true,
             },
         ],
         'import/no-webpack-loader-syntax': ['error'],
@@ -696,6 +698,7 @@ module.exports = {
         ],
         'import/prefer-default-export': [0],
         'import/unambiguous': ['off'],
+        'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
         indent: [
             'off',
             2,

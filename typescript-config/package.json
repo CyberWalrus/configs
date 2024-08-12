@@ -1,6 +1,6 @@
 {
   "name": "@cyber-walrus/typescript-config",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "type": "module",
   "description": "cyber-walrus typescript-config",
   "author": "Andrey Pakhomov <stonewalrusfan@gmail.com>",
@@ -14,7 +14,8 @@
   },
   "files": [
     "package.json",
-    "tsconfig.json"
+    "tsconfig.json",
+    "tsconfig.node.json"
   ],
   "scripts": {
     "send": "npm publish"

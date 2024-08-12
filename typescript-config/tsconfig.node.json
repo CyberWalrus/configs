@@ -15,12 +15,11 @@
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "module": "ESNext",
-        "moduleResolution": "Bundler",
+        "moduleResolution": "NodeNext",
         "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx",
         "outDir": "lib",
         "typeRoots": [
             "./node_modules/@types/",

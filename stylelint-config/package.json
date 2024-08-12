@@ -1,6 +1,6 @@
 {
   "name": "@cyber-walrus/stylelint-config",
-  "version": "1.10.3",
+  "version": "1.10.4",
   "type": "module",
   "description": "cyber-walrus stylelint-config",
   "main": "index.cjs",

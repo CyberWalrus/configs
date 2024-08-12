@@ -27,7 +27,7 @@
             "./types",
             "./node_modules"
         ],
-        "baseUrl": "./",
+        "baseUrl": ".",
         "paths": {
             "$*": [
                 "src/*"
@@ -41,11 +41,11 @@
         "scripts",
         "webpack",
         "vite",
-        "/*.js",
-        "/*.cjs",
-        "/*.ts",
-        "/*.tsx",
-        "/*.mts"
+        "*.js",
+        "*.cjs",
+        "*.ts",
+        "*.tsx",
+        "*.mts"
     ],
     "exclude": [
         "node_modules"

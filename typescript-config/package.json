@@ -1,6 +1,6 @@
 {
   "name": "@cyber-walrus/typescript-config",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "type": "module",
   "description": "cyber-walrus typescript-config",
   "author": "Andrey Pakhomov <stonewalrusfan@gmail.com>",
